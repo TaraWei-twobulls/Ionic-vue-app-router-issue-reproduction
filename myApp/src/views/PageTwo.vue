@@ -2,15 +2,14 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Home</ion-title>
+        <ion-title>Page Two</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">  
       <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-        <ion-button @click="goNext">Go to Page one</ion-button>
+        <ion-button @click="goNext">Go to Page Three</ion-button>
+        <ion-button @click="goBack">Back to Home</ion-button>
       </div>
     </ion-content>
   </ion-page>
@@ -22,7 +21,11 @@ import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIon
 const ionRouter = useIonRouter();
 
 const goNext = () => {
-  ionRouter.push('/pageOne');
+    ionRouter.push('/pageThree');
+}
+
+const goBack = () => {
+    history.go(-2);
 }
 </script>
 
